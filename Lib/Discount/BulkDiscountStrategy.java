@@ -1,23 +1,27 @@
 package Lib.Discount;
 
 import Lib.CartItem;
+import Lib.DiscountStrategy;
 
-public class BulkDiscountStrategy implements DiscountStrategy {
-    private final int minimumQuantity;
+
+/*
+ * การซื้อสินค้าแบบ BULK ซื้อเยอะลดราคา
+ */
+public class BulkDiscountStrategy implements DiscountStrategy{
+    private final int mininumQuantity;
     private final double discountPercentage;
 
-    public BulkDiscountStrategy(int minimumQuantity, double discountPercentage) {
-        this.minimumQuantity = minimumQuantity;
+    public BulkDiscountStrategy(int mininumQuantity, double discountPercentage){
+        this.mininumQuantity = mininumQuantity;
         this.discountPercentage = discountPercentage;
     }
-    
+
     @Override
-    public double calculatePrice(CartItem item) {
-       double originalPrice = item.getProduct().getPrice() * item.getQuantity();
-       if (item.getQuantity() >= minimumQuantity){
-        return originalPrice * (1.0 - discountPercentage);
-       }
-       return originalPrice;
+    public double calculatePrice(CartItem item){
+        double orginalPrice = item.getProduct().getPrice() * item.getQuantity();
+        if(item.getQuantity() >= mininumQuantity) {
+            return orginalPrice * (1.0 - discountPercentage);
+        }
+        return orginalPrice;
     }
-    
 }
