@@ -1,5 +1,7 @@
 package Lib.Discount;
 
-public class DiscountStrategy {
-    
+import Lib.CartItem;
+
+public interface DiscountStrategy {
+    double calculatePrice(CartItem item);
 }

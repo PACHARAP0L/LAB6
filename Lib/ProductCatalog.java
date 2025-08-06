@@ -26,16 +26,25 @@ public class ProductCatalog {
     /**เพิ่มสินค้าใหม่เข้าแคตตาล็อก
      * @param product สินค้าที่ต้องการเพิ่ม
      */ 
-    public void addProduct(Product product) {
-        
+    /**
+     * เพิ่มสินค้าใหม่เข้าสู่แคตตาล็อก
+     * @param product สินค้าที่ต้องการเพิ่ม
+     */
+    public void addProduct(Product product){
+        if (product != null && !products.contains(product)){
+            products.add(product);
+        }
+        checkRep();
     }
-     /**ค้นหาสินค้าจากรหัส
-      *@param productId รหัสสินค้าที่ต้องการค้นหา
+
+    /**
+     * ค้นหาสินค้าจากรหัสสินค้า
+     * @param productId รหัสสินค้าที่ต้องการค้นหา
      * @return อ็อบเจกต์ Product หากพบ, หรือ null หากไม่พบ
-    */
-    public Product findById(String productId) {
-        for(Product p : products){
-            if (p.getProductId().equals(productId)) {
+     */
+    public Product findById(String productId){
+        for(Product p : products) {
+            if(p.getProductId().equals(productId)){
                 return p;
             }
         }

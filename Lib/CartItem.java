@@ -31,7 +31,7 @@ public class CartItem{
      * สินค้าในตะกร้า
      * @param product อ็อบเจกต์สินค้า ห้ามเป็นค่าว่าง
      * @param quantity จำนวนสินค้าต้องมากกว่า0
-     * @param product 
+     * @param product ราคา ต้องไม่ติดลบ
 
      */
 public CartItem(int quantity, Product product) {

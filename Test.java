@@ -1,6 +1,5 @@
 import Lib.*;
 
-
 public class Test {
 
     public static void main(String[] args) {
@@ -15,6 +14,8 @@ public class Test {
 
         CartItem item1 = new CartItem(catalog.findById("P001"), 2);
         CartItem item2 = new CartItem(soda, 2);
+
+        
     }
 }
 
